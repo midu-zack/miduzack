@@ -812,6 +812,7 @@ Author URL: http://w3layouts.com
     </button>
 
     <script>
+      let a;
        document.addEventListener('DOMContentLoaded', function () {
     let myform = document.getElementById('gform');
     let name = document.getElementById('w3lName');
@@ -870,27 +871,16 @@ Author URL: http://w3layouts.com
           document.getElementById('mes').style.display='none'
           document.getElementById('flow').style.display='none'
 
-          //main pont look at this code very importent
-
-
-          // mail.value='';
-          // name.value='';
-          // subject.value='';
-          // message.value='';
-          document.location.href = "/miduzack"
-           
-            
+          
+            setTimeout(() => {
+              document.location.href="/miduzack"
+            }, 500);
         }
         
     });
 });
 
-function call(){
-  let myform = document.getElementById('gform');
-
-myform.reset();
-}
-
+   
  
 
 
