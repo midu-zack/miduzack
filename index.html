@@ -737,48 +737,57 @@ Author URL: http://w3layouts.com
                 target="form-iframe"
               >
                 <iframe name="form-iframe" style="display: none"></iframe>
-                <div class="twice-two">
-                  <input
+               
+                <div class="twice-two   " >
+                  <div >
+                  <input 
                     type="text"
                     class="form-control"
                     name="w3lName"
                     id="w3lName"
-                    placeholder="Name"
-                  
-                  />
+                    placeholder="Name"/>
+                   
+                  <p style="color: red;" id="flow">  </p>
+                </div>
+                    
+              
+
+
+                <div >
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     name="w3lSender"
                     id="w3lSender"
-                    placeholder="Email"
+                    placeholder="Email"/>
+                    <p style="color: red;" id="ml"></p>
                     
-                  />
+                    
                 </div>
+              </div>
+             
+                
                 <div class="twice">
                   <input
                     type="text"
                     class="form-control"
                     name="w3lSubject"
                     id="w3lSubject"
-                    placeholder="Subject"
-                    
-                  />
+                    placeholder="Subject"/>
+                    <p style="color: red;" id="nish"> </p>
                 </div>
                 <textarea
                   name="w3lMessage"
                   class="form-control"
                   id="w3lMessage"
-                  placeholder="Message"
-                  
-                ></textarea>
+                  placeholder="Message"></textarea>
+                  <p style="color: red;" id="mes"></p>
                 <div class="text-right">
                   <button
                     type="submit"
                     id="submit"
                     value="submit"
-                    class="btn btn-secondary btn-style mt-4"
-                  >
+                    class="btn btn-secondary btn-style mt-4">
                     Send Message
                   </button>
                 </div>
@@ -815,36 +824,51 @@ Author URL: http://w3layouts.com
         let errorMessage = '';
 
         if (name.value === '') {
-            errorMessage += 'Name field is required.\n';
+            document.getElementById("flow").textContent = 'Name field is required.\n'
+            errorMessage += "kh"
         } else if (/\d/.test(name.value)) {
-            errorMessage += 'Name should not include digits.\n';
+          document.getElementById("flow").textContent = 'Name should not include digits.\n'
+          errorMessage += "kh"
+           
         } else if (name.value.length < 4) {
-            errorMessage += 'Name must be at least 4 characters.\n';
+          document.getElementById("flow").textContent = 'Name must be at least 4 characters.\n'
+          errorMessage += "kh"
         }
 
         if (subject.value === '') {
-            errorMessage += 'Subject field is required.\n';
+          errorMessage += "kh"
+            document.getElementById("nish").textContent = 'Subject field is required.\n'
         }  else if (subject.value.length < 5) {
-            errorMessage += 'Subject must be at least 5 characters.\n';
+          document.getElementById("nish").textContent = 'Subject must be at least 5 characters.\n'
+          errorMessage += "kh"
         }
 
         if (message.value.trim() === '') {
-            errorMessage += 'Message field is required.\n';
+          document.getElementById("mes").textContent = 'Message field is required.\n'
+          errorMessage += "kh"
         }  
 
 
         if (mail.value === '') {
-            errorMessage += 'Email field is required.\n';
+          document.getElementById("ml").textContent = 'Email field is required.\n'
+          errorMessage += "kh"
         } else if (!mail.value.match(mailRegex)) {
-            errorMessage += 'Invalid email format.\n';
+          document.getElementById("ml").textContent = 'Invalid email format.\n'
+          errorMessage += "kh"
+    
         }
 
         if (errorMessage !== '') {
-            alert(errorMessage);
-            event.preventDefault(); 
+            
+           return event.preventDefault(); 
         } else {
 
-          myform.reset();
+          alert('submitted')
+      //  myform.reset();   
+          document.getElementById('nish').style.display='none'
+          document.getElementById('ml').style.display='none'
+          document.getElementById('mes').style.display='none'
+          document.getElementById('flow').style.display='none'
 
           //main pont look at this code very importent
 
@@ -853,13 +877,19 @@ Author URL: http://w3layouts.com
           // name.value='';
           // subject.value='';
           // message.value='';
-            
+          document.location.href = "/"
            
             
         }
+        
     });
 });
 
+function call(){
+  let myform = document.getElementById('gform');
+
+myform.reset();
+}
 
  
 

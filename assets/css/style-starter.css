@@ -10747,8 +10747,10 @@ span.text {
 .w3l-contactblock .twice-two {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 20px; }
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 20px;
+   
+ }
 
 .w3l-contactblock .twice {
   margin-bottom: 20px; }
